@@ -9,11 +9,11 @@ function Header() {
   console.log(userInfo);
 
   return (
-    <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-50 ">
-      <div className="max-w-screen-xl h-full mx-auto flex items-center justify-between">
+    <div className="w-full h-20  bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-50 ">
+      <div className="max-w-screen-xl h-full mx-auto flex sm:mr-5 max-sm:flex gap-2 max-sm:text-xs max-sm:mr-6  items-center justify-between">
         <Link to="/">
           <div>
-            <img className="w-20" src={logoDark} alt="" />
+            <img className="w-20 max-sm:max-w-fit" src={logoDark} alt="" />
           </div>
         </Link>
         <div className="flex items-center gap-8">
@@ -36,20 +36,20 @@ function Header() {
           </ul>
           <Link to="/cart">
             <div className="relative">
-              <img className="w-12" src={shopping} alt="" />
-              <span className="absolute w-8 top-2 left-2 bottom-1 text-xl flex items-center justify-center font-semibold  ">
+              <img className="w-12 max-sm:max-w-fit" src={shopping} alt="" />
+              <span className="absolute  w-8 top-2 left-2 bottom-1 text-xl flex items-center justify-center font-semibold  ">
                 {productData.length}
               </span>
             </div>
           </Link>
           <Link to="/login">
-            <img className="w-8 h-8 rounded-full" src={userInfo?userInfo.image: login} alt="userLogo" />
+            <img
+              className="w-8 h-8 rounded-full max-sm:max-w-fit"
+              src={userInfo ? userInfo.image : login}
+              alt="userLogo"
+            />
           </Link>
-          {userInfo && (
-            <p className="text-base font-titleFont font-semibold ">
-              {userInfo.name.split("",7)}
-            </p>
-          )}
+          {userInfo && <p className="text-base font-titleFont font-semibold ">{userInfo.name.split('', 7)}</p>}
         </div>
       </div>
     </div>

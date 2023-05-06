@@ -28,12 +28,14 @@ const ProductsCard = ({ product }) => {
       <div className="w-full border-[1px] px-2 py-4">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="font-titleFont text-base font-bold">{product.title.substring(0, 15)}</h2>
+            <h2 className="font-titleFont max-lg:text-sm max-md:text-xs text-base font-bold">
+              {product.title.substring(0, 15)}
+            </h2>
           </div>
           <div className="flex justify-end gap-2 relative overflow-hidden w-28 tex-sm">
             <div className="flex gap-2 transform group-hover:translate-x-24 transition-transform duration-500">
-              <p className="line-through text-gray-500">{product.oldPrice}</p>
-              <p className="font-semibold">{product.price}</p>
+              <p className="line-through text-gray-500 max-lg:text-sm max-md:text-xs">{product.oldPrice}</p>
+              <p className="font-semibold max-lg:text-sm max-md:text-xs">{product.price}</p>
             </div>
             <p
               onClick={() =>
@@ -48,7 +50,7 @@ const ProductsCard = ({ product }) => {
                   })
                 ) & toast.success(`${product.title} is added`)
               }
-              className="absolute z-20 w-[100px] text-gray-500  hover:text-gray-900 flex items-center gap-1 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
+              className="absolute z-20 w-[100px] text-gray-500   hover:text-gray-900 flex items-center gap-1 top-0 transform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500 max-lg:text-sm max-sm:text-xs"
             >
               add to cart{' '}
               <span>
@@ -57,10 +59,14 @@ const ProductsCard = ({ product }) => {
             </p>
           </div>
         </div>
-        <p>{product.category}</p>
+        <p className="max-lg:text-sm max-sm:text-xs">{product.category}</p>
       </div>
       <div className="absolute top-4 right-0 ">
-        {product.isNew && <p className="bg-black text-white font-semibold font-titleFont px-6 py-1">Sale</p>}
+        {product.isNew && (
+          <p className="bg-black text-white max-sm:text-sm max-sm:px-1 max-sm:py-0 max-md:px-2 max-md:py-0 max-lg:px-2 max-md:text-sm font-semibold font-titleFont px-6 py-1">
+            Sale
+          </p>
+        )}
       </div>
       <ToastContainer
         position="top-left"

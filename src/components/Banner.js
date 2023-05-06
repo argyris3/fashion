@@ -23,10 +23,20 @@ const Banner = () => {
           style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
           className="w-[400vw] h-full flex transition-transform duration-1000 "
         >
-          <img className="w-screen h-screen object-cover" src={data[0]} alt="Img0ne" loading="priority" />
-          <img className="w-screen h-screen  object-cover" src={data[1]} alt="ImgTwo" loading="priority" />
-          <img className="w-screen h-screen object-cover" src={data[2]} alt="ImgThree" loading="priority" />
-          <img className="w-screen h-screen object-cover" src={data[3]} alt="ImgFour" loading="priority" />
+          <img
+            className="w-screen h-screen max-sm:object-fill object-cover"
+            src={data[0]}
+            alt="Img0ne"
+            loading="priority"
+          />
+          <img
+            className="w-screen h-screen  max-sm:object-fil object-cover"
+            src={data[1]}
+            alt="ImgTwo"
+            loading="priority"
+          />
+          <img className="w-screen h-screen max-sm:object-fil object-cover" src={data[2]} alt="ImgThree" loading="priority" />
+          <img className="w-screen h-screen max-sm:object-fil object-cover" src={data[3]} alt="ImgFour" loading="priority" />
         </div>
         <div className="absolute w-fit left-0 right-0 mx-auto flex gap-8 bottom-44">
           <div
