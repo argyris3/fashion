@@ -9,21 +9,21 @@ const CartItem = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.bazaar.productData);
   return (
-    <div className="w-2/3 pr-10">
+    <div className="w-2/3 max-sm:w-4/10 pr-10 max-sm:pr-0">
       <div className="w-full">
         <h2 className="font-titleFont text-2xl">Shopping Cart</h2>
       </div>
       <div>
         {productData.map((item) => (
-          <div key={item._id} className="flex items-center justify-between gap-6 mt-6">
-            <div className="flex items-center gap-2">
+          <div key={item._id} className="flex items-center justify-between gap-6 mt-6 max-sm:gap-1">
+            <div className="flex items-center gap-2 max-sm:gap-1">
               <MdOutlineClose
                 onClick={() => dispatch(deleteItem(item._id)) & toast.error('Item is removed')}
-                className="text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
+                className="text-xl max-sm:text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
               />
-              <img className="w-32 h-32 object-cover" src={item.image} alt="productImg" />
+              <img className="w-32 h-32 max-sm:w-20 max-sm:h-20 object-cover" src={item.image} alt="productImg" />
             </div>
-            <h2 className="w-52">{item.title}</h2>
+            <h2 className="w-52 max-sm:w-36">{item.title}</h2>
             <p className="w-10">${item.price}</p>
           </div>
         ))}
